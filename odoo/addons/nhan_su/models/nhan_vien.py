@@ -10,3 +10,4 @@ class NhanVien(models.Model):
     que_quan = fields.Char("Quê quán")
     email = fields.Char("Email")
     so_dien_thoai = fields.Char("Số điện thoại")
+    lich_su_cong_tac_ids = fields.One2many("lich_su_cong_tac", inverse_name= "nhan_vien_id", string="Lịch sử công tác")
