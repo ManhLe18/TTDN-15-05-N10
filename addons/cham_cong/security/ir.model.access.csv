@@ -1,0 +1,10 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_cham_cong,access.cham.cong,model_cham_cong,,1,1,1,1
+access_dang_ky_lam_viec,access.dang.ky.lam.viec,model_dang_ky_lam_viec,,1,1,1,1
+access_don_xin_den_muon,access.don.xin.den.muon,model_don_xin_den_muon,,1,1,1,1
+access_don_xin_ve_som,access.don.xin.ve.som,model_don_xin_ve_som,,1,1,1,1
+access_don_xin_nghi,access.don.xin.nghi,model_don_xin_nghi,,1,1,1,1
+access_lich_lam_viec,access.lich.lam.viec,model_lich_lam_viec,,1,1,1,1
+access_lich_su_cham_cong,access.lich.su.cham.cong,model_lich_su_cham_cong,,1,1,1,1
+access_dem_ngay_cong,access.dem.ngay.cong,model_dem_ngay_cong,,1,1,1,1
+access_thong_ke_cham_cong,access.thong.ke.cham.cong,model_thong_ke_cham_cong,,1,1,1,1

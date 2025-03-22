@@ -1,0 +1,32 @@
+<odoo>
+    <record id="action_lich_lam_viec" model="ir.actions.act_window">
+        <field name="name">Lịch nghỉ</field>
+        <field name="res_model">lich_lam_viec</field>
+        <field name="view_mode">calendar,tree</field>
+    </record>
+
+    <record id="view_lich_lam_viec_tree" model="ir.ui.view">
+        <field name="name">lich.lam.viec.tree</field>
+        <field name="model">lich_lam_viec</field>
+        <field name="arch" type="xml">
+            <tree string="Lịch Làm Việc">
+                <field name="ngay"/>
+                <field name="dang_ky_lam_viec_id"/>
+                <field name="nhan_vien_id"/>
+                <field name="trang_thai"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_lich_lam_viec_calendar" model="ir.ui.view">
+        <field name="name">lich.lam.viec.calendar</field>
+        <field name="model">lich_lam_viec</field>
+        <field name="arch" type="xml">
+            <calendar string="Lịch Làm Việc" date_start="ngay" color="trang_thai">
+                <field name="dang_ky_lam_viec_id"/>
+                <field name="nhan_vien_id"/>
+            </calendar>
+        </field>
+    </record>
+
+</odoo>

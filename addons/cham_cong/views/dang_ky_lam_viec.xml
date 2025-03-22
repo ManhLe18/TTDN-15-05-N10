@@ -1,0 +1,120 @@
+<!-- <odoo>
+    <record id="action_dang_ky_lam_viec" model="ir.actions.act_window">
+        <field name="name">Đăng ký giờ làm</field>
+        <field name="res_model">dang_ky_lam_viec</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="view_dang_ky_lam_viec_tree" model="ir.ui.view">
+        <field name="name">dang.ky.lam.viec.tree</field>
+        <field name="model">dang_ky_lam_viec</field>
+        <field name="arch" type="xml">
+            <tree string="Danh sách đăng ký giờ làm">
+                <field name="nhan_vien_ids"/>
+                <field name="ngay_lam"/>
+                <field name="gio_bat_dau"/>
+                <field name="gio_ket_thuc"/>
+                <field name="trang_thai" readonly="1"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_dang_ky_lam_viec_form" model="ir.ui.view">
+        <field name="name">dang.ky.lam.viec.form</field>
+        <field name="model">dang_ky_lam_viec</field>
+        <field name="arch" type="xml">
+            <form string="Đăng ký giờ làm việc">
+                <sheet>
+                    <group>
+                        <field name="nhan_vien_ids"/>
+                        <field name="ngay_lam"/>
+                        <field name="gio_bat_dau"/>
+                        <field name="gio_ket_thuc"/>
+                        <field name="trang_thai" readonly="1"/>
+                    </group>
+                    <footer>
+                        <button name="action_approve" type="object" string="Duyệt" class="btn-primary" attrs="{'invisible': [('trang_thai', '!=', 'draft')]}"/>
+                        <button name="action_cancel" type="object" string="Hủy" class="btn-danger" attrs="{'invisible': [('trang_thai', '!=', 'draft')]}"/>
+                    </footer>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo> -->
+
+
+<odoo>
+    <record id="action_dang_ky_lam_viec" model="ir.actions.act_window">
+        <field name="name">Thông báo nghỉ</field>
+        <field name="res_model">dang_ky_lam_viec</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="view_dang_ky_lam_viec_tree" model="ir.ui.view">
+        <field name="name">dang.ky.lam.viec.tree</field>
+        <field name="model">dang_ky_lam_viec</field>
+        <field name="arch" type="xml">
+            <tree string="Danh sách đăng ký giờ làm">
+                <field name="nhan_vien_ids"/>
+                <field name="ngay_lam"/>
+                <field name="trang_thai" readonly="1"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_dang_ky_lam_viec_form" model="ir.ui.view">
+        <field name="name">dang.ky.lam.viec.form</field>
+        <field name="model">dang_ky_lam_viec</field>
+        <field name="arch" type="xml">
+            <form string="Đăng ký giờ làm việc">
+                <sheet>
+                    <group>
+                        <field name="nhan_vien_ids"/>
+                        <field name="ngay_lam"/>
+                        <field name="trang_thai" readonly="1"/>
+                        <field name="check_box_tao_ngay_moi"/>
+                    </group>
+                    <footer>
+                        <button name="action_approve" type="object" string="Duyệt" class="btn-primary" attrs="{'invisible': [('trang_thai', '!=', 'draft')]}"/>
+                        <button name="action_cancel" type="object" string="Hủy" class="btn-danger" attrs="{'invisible': [('trang_thai', '!=', 'draft')]}"/>
+                    </footer>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_approve_multi" model="ir.actions.server">
+        <field name="name">Duyệt hàng loạt</field>
+        <field name="model_id" ref="model_dang_ky_lam_viec"/>
+        <field name="state">code</field>
+        <field name="code">
+            for record in records:
+                if record.trang_thai == 'draft':
+                    record.action_approve()
+        </field>
+    </record>
+
+    <record id="action_approve_multi_action" model="ir.actions.server">
+        <field name="name">Duyệt hàng loạt</field>
+        <field name="model_id" ref="model_dang_ky_lam_viec"/>
+        <field name="state">code</field>
+        <field name="code">
+            for record in records:
+                if record.trang_thai == 'draft':
+                    record.action_approve()
+        </field>
+    </record>
+
+    <record id="dang_ky_lam_viec_action_server" model="ir.actions.server">
+        <field name="name">Duyệt hàng loạt</field>
+        <field name="model_id" ref="model_dang_ky_lam_viec"/>
+        <field name="binding_model_id" ref="model_dang_ky_lam_viec"/>
+        <field name="state">code</field>
+        <field name="code">
+            for record in records:
+                if record.trang_thai == 'draft':
+                    record.action_approve()
+        </field>
+    </record>
+
+</odoo>

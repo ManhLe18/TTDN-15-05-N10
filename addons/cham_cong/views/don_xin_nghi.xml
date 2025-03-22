@@ -1,0 +1,55 @@
+<odoo>
+    <record id="action_don_xin_nghi" model="ir.actions.act_window">
+        <field name="name">Đơn xin nghỉ</field>
+        <field name="res_model">don_xin_nghi</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="view_don_xin_nghi_tree" model="ir.ui.view">
+        <field name="name">don.xin.nghi.tree</field>
+        <field name="model">don_xin_nghi</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="nhan_vien_id"/>
+                <!-- <field name="ngay_lam"/> -->
+                <!-- <field name="gio_bat_dau"/>
+                <field name="gio_ket_thuc"/> -->
+                <field name="nghi_tu_ngay"/>
+                <field name="nghi_den_ngay"/>
+                <field name="so_ngay_nghi"/>
+                <field name="ly_do"/>
+                <field name="trang_thai" readonly="1"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_don_xin_nghi_form" model="ir.ui.view">
+        <field name="name">don.xin.nghi.form</field>
+        <field name="model">don_xin_nghi</field>
+        <field name="arch" type="xml">
+            <form string="Đơn xin nghỉ">
+                <sheet>
+                    <group>
+                        <field name="nhan_vien_id"/>
+                        <!-- <field name="dang_ky_lam_viec_id" options="{'no_create': True}"/>
+                        <field name="ngay_lam"/> -->
+                        <!-- <field name="gio_bat_dau"/>
+                        <field name="gio_ket_thuc"/> -->
+                        <field name="nghi_tu_ngay"/>
+                        <field name="nghi_den_ngay"/>
+                        <field name="ly_do"/>
+                        <field name="trang_thai" readonly="1"/>
+                    </group>
+                    <group>
+                        <field name="file_dinh_kem" filename="file_ten"/>
+                        <field name="file_ten"/>
+                    </group>
+                    <footer>
+                        <button name="action_approve" type="object" string="Duyệt" class="oe_highlight"/>
+                        <button name="action_reject" type="object" string="Từ chối" class="btn btn-danger"/>
+                    </footer>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

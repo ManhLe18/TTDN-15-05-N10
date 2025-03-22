@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Form View -->
+    <record id="view_thong_ke_cham_cong_form" model="ir.ui.view">
+        <field name="name">thong.ke.cham.cong.form</field>
+        <field name="model">thong_ke_cham_cong</field>
+        <field name="arch" type="xml">
+            <form string="Thống kê chấm công">
+                <sheet>
+                    <group>
+                        <field name="nhan_vien_id"/>
+                        <field name="tu_ngay"/>
+                        <field name="den_ngay"/>
+                    </group>
+                    <group>
+                        <field name="tong_gio_lam_viec" readonly="1"/>
+                        <field name="so_ngay_di_muon" readonly="1"/>
+                        <field name="so_ngay_ve_som" readonly="1"/>
+                        <field name="so_ngay_nghi" readonly="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Tree View -->
+    <record id="view_thong_ke_cham_cong_tree" model="ir.ui.view">
+        <field name="name">thong.ke.cham.cong.tree</field>
+        <field name="model">thong_ke_cham_cong</field>
+        <field name="arch" type="xml">
+            <tree string="Thống kê chấm công">
+                <field name="nhan_vien_id"/>
+                <field name="tong_gio_lam_viec"/>
+                <field name="so_ngay_di_muon"/>
+                <field name="so_ngay_ve_som"/>
+                <field name="so_ngay_nghi"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Biểu đồ Cột (Bar Chart) -->
+    <record id="view_thong_ke_cham_cong_graph" model="ir.ui.view">
+        <field name="name">thong.ke.cham.cong.graph</field>
+        <field name="model">thong_ke_cham_cong</field>
+        <field name="arch" type="xml">
+            <graph string="Biểu đồ thống kê chấm công" type="bar">
+                <field name="nhan_vien_id"/>
+                <field name="tong_gio_lam_viec" type="measure"/>
+                <field name="so_ngay_di_muon" type="measure"/>
+                <field name="so_ngay_ve_som" type="measure"/>
+                <field name="so_ngay_nghi" type="measure"/>
+            </graph>
+        </field>
+    </record>
+
+    <!-- Action Window -->
+    <record id="action_thong_ke_cham_cong" model="ir.actions.act_window">
+        <field name="name">Báo cáo thống kê</field>
+        <field name="res_model">thong_ke_cham_cong</field>
+        <field name="view_mode">tree,form,graph</field>
+    </record>
+
+   
+</odoo>

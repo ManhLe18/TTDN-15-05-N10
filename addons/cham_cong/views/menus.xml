@@ -1,0 +1,57 @@
+<odoo>
+    <menuitem id="menu_cham_cong_root" name="Quản lý chấm công" sequence="0"/>
+
+    <menuitem id="menu_cham_cong_tree"
+              name="Danh sách chấm công"
+              parent="menu_cham_cong_root"
+              action="action_cham_cong"
+              sequence="1"/>
+
+    <!-- <menuitem id="menu_dang_ky_lam_viec_tree"
+              name="Thông báo nghỉ"
+              parent="menu_cham_cong_root"
+              action="action_dang_ky_lam_viec"
+              sequence="2"/>
+
+    <menuitem id="action_lich_lam_viec_tree"
+              name="Lịch nghỉ"
+              parent="menu_cham_cong_root"
+              action="action_lich_lam_viec"
+              sequence="3"/> -->
+
+    <menuitem id="menu_quan_ly_don"
+              name="Quản lý đơn"
+              parent="menu_cham_cong_root"
+              sequence="4"/>
+
+    <menuitem id="menu_don_xin_den_muon_tree"
+              name="Đơn xin đến muộn"
+              parent="menu_quan_ly_don"
+              action="action_don_xin_den_muon"
+              sequence="5"/>
+
+    <menuitem id="menu_don_xin_ve_som_tree"
+              name="Đơn xin về sớm"
+              parent="menu_quan_ly_don"
+              action="action_don_xin_ve_som"
+              sequence="6"/>
+
+    <menuitem id="menu_don_xin_nghi_tree"
+              name="Đơn xin nghỉ"
+              parent="menu_quan_ly_don"
+              action="action_don_xin_nghi"
+              sequence="7"/>
+
+    <menuitem id="menu_lich_su_cham_cong_tree"
+              name="Lịch sử chấm công"
+              parent="menu_cham_cong_root"
+              action="action_lich_su_cham_cong"
+              sequence="8"/>
+
+    <menuitem id="menu_thong_ke_cham_cong_tree"
+              name="Thống kê"
+              parent="menu_cham_cong_root"
+              action="action_thong_ke_cham_cong"
+              sequence="9"/>
+
+</odoo>
